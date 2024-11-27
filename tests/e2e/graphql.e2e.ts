@@ -1,4 +1,4 @@
-import { test } from './fixtures/mock-server-fixture';
+import { test } from '../../src/fixtures/mock-server-fixture';
 import { expect } from '@playwright/test';
 
 test.describe('GraphQL API Tests', () => {

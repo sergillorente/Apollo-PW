@@ -18,21 +18,36 @@ A modern **GraphQL API testing** and **mocking framework** using [Apollo Server]
 ## Getting Started
 
 ### Install dependencies
-- ```npm install```
+
+- `npm install`
 
 ### Usage
-**Start the Mock Server**
-- ```npm run start:mock-server```
-The server will start at http://localhost:4000.
 
-**Run Tests**
-- ```npm test```
+**Start the Mock Server**
+
+- `npm run start:mock-server`
+  The server will start at http://localhost:4000.
+
+**Run All tests**
+
+- `npm run test`
+
+**Run Jest tests**
+
+- `npm run test:jest`
+
+**Run Playwright tests**
+
+- `npm run test:playwright`
 
 **Lint the Code**
-- ```npm run lint```
+
+- `npm run lint`
 
 **Format the Code**
-- ```npm run format```
+
+- `npm run format`
 
 **Generate GraphQL Types**
-- ```npm run generate```
+
+- `npm run generate`
