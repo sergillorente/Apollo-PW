@@ -15,7 +15,7 @@ if (require.main === module) {
   startMockServer(4000)
     .then(() => {
       console.log('Press Ctrl+C to stop the server');
-      process.stdin.resume(); // Prevent Node.js process from exiting
+      process.stdin.resume();
     })
     .catch((err) => {
       console.error('Failed to start mock server:', err);
