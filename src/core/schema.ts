@@ -54,4 +54,22 @@ export const typeDefs = gql`
     USER
     GUEST
   }
+
+  type Query {
+    githubUser(username: String!): GitHubUser
+    githubRepositories(username: String!): [Repository!]!
+  }
+
+  type GitHubUser {
+    name: String
+    avatarUrl: String
+    bio: String
+    repositories: [Repository!]!
+  }
+
+  type Repository {
+    name: String!
+    description: String
+    stars: Int
+  }
 `;

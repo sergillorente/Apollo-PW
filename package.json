@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:mock-server": "ts-node src/mock-server.ts",
-    "test": "npm run test:jest && npm run test:playwright",
-    "test:playwright": "npx playwright test",
-    "test:jest": "jest",
+    "start:mock-server": "ts-node src/services/mock-server.ts",
+    "test": "npm run test:jest && npm run test:playwright:e2e && npm run test:playwright:integration",
+    "test:playwright:e2e": "npx playwright test --project=e2e",
+    "test:playwright:integration": "npx playwright test --project=integration",
+    "test:jest:unit": "jest",
     "lint": "eslint .",
     "format": "prettier --write .",
     "generate": "graphql-codegen"
@@ -17,7 +18,10 @@
   "description": "",
   "dependencies": {
     "apollo-server": "^3.13.0",
-    "graphql": "^16.9.0"
+    "axios": "^1.7.8",
+    "dotenv": "^16.4.5",
+    "graphql": "^16.9.0",
+    "nock": "^13.5.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
