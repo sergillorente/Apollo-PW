@@ -3,19 +3,7 @@ import { expect } from '@playwright/test';
 import { fetchGitHubRepositories } from '../../src/services/github/githubServices';
 import nock from 'nock';
 import { mockGitHubApi } from '../../src/services/utils/reusables';
-
-const mockRepositoriesResponse = [
-  {
-    name: 'Repo1',
-    description: 'First repository',
-    stargazers_count: 100,
-  },
-  {
-    name: 'Repo2',
-    description: 'Second repository',
-    stargazers_count: 50,
-  },
-];
+import { mockGitHubRepositoriesResponse } from '../../src/services/github/mockData';
 
 test.describe('GitHub Service - fetchGitHubRepositories', () => {
   test.beforeEach(() => {
@@ -29,16 +17,20 @@ test.describe('GitHub Service - fetchGitHubRepositories', () => {
   test('should fetch repositories for a valid username', async () => {
     const username = 'octocat';
 
-    mockGitHubApi(`/users/${username}/repos`, 200, mockRepositoriesResponse);
+    mockGitHubApi(
+      `/users/${username}/repos`,
+      200,
+      mockGitHubRepositoriesResponse
+    );
 
     const repositories = await fetchGitHubRepositories(username);
 
-    expect(repositories).toHaveLength(mockRepositoriesResponse.length);
+    expect(repositories).toHaveLength(mockGitHubRepositoriesResponse.length);
     repositories.forEach((repo, index) => {
       expect(repo).toEqual({
-        name: mockRepositoriesResponse[index].name,
-        description: mockRepositoriesResponse[index].description,
-        stars: mockRepositoriesResponse[index].stargazers_count,
+        name: mockGitHubRepositoriesResponse[index].name,
+        description: mockGitHubRepositoriesResponse[index].description,
+        stars: mockGitHubRepositoriesResponse[index].stargazers_count,
       });
     });
   });
