@@ -7,11 +7,11 @@ A modern **GraphQL API testing** and **mocking framework** using [Apollo Server]
 ## Features
 
 - **Apollo Server**: Easily mock and serve a GraphQL API locally.
-- **Playwright Testing**: Comprehensive integration tests for GraphQL endpoints.
+- **Unit Testing**: Comprehensive unit tests for the different features of the API using Jest.
+- **Integration Testing**: Comprehensive integration tests for GraphQL endpoints using Playwright.
 - **TypeScript Support**: Type-safe development with robust tooling.
 - **Linting and Formatting**: Ensures clean and consistent code using ESLint and Prettier.
 - **GraphQL Code Generation**: Automates the creation of TypeScript types for GraphQL schemas and operations.
-- **Ready-to-Use CI/CD**: Simple integration with GitHub Actions or other CI/CD platforms.
 
 ---
 
