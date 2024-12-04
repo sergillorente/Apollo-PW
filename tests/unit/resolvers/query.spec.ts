@@ -1,4 +1,4 @@
-import { resolvers } from '../../src/core/resolvers';
+import { resolvers } from '../../../src/core/resolvers';
 
 describe('Query Resolvers', () => {
   describe('user resolver', () => {

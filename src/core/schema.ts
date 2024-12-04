@@ -6,6 +6,8 @@ export const typeDefs = gql`
   type Query {
     user(id: ID!): User
     users(limit: Int, offset: Int): [User!]!
+    githubUser(username: String!): GitHubUser
+    githubRepositories(username: String!): [Repository!]!
   }
 
   type Mutation {
@@ -53,11 +55,6 @@ export const typeDefs = gql`
     ADMIN
     USER
     GUEST
-  }
-
-  type Query {
-    githubUser(username: String!): GitHubUser
-    githubRepositories(username: String!): [Repository!]!
   }
 
   type GitHubUser {

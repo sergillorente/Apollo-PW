@@ -4,10 +4,9 @@
   "main": "index.js",
   "scripts": {
     "start:mock-server": "ts-node src/services/mock-server.ts",
-    "test": "npm run test:jest && npm run test:playwright:e2e && npm run test:playwright:integration",
-    "test:playwright:e2e": "npx playwright test --project=e2e",
-    "test:playwright:integration": "npx playwright test --project=integration",
-    "test:jest:unit": "jest",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:integration": "npx playwright test --project=integration",
+    "test:unit": "jest",
     "lint": "eslint .",
     "format": "prettier --write .",
     "generate": "graphql-codegen"
@@ -39,6 +38,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "graphql-scalars": "^1.24.0",
     "graphql-subscriptions": "^3.0.0",
     "jest": "^29.7.0",
     "playwright": "^1.49.0",

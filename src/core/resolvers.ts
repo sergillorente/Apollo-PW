@@ -16,14 +16,28 @@ export const resolvers = {
       { id: '3', name: 'User Three', email: 'user3@example.com' },
     ],
     githubUser: async (_: any, { username }: { username: string }) => {
-      const user = await fetchGitHubUser(username);
-      const repositories = await fetchGitHubRepositories(username);
-      return {
-        name: user.name,
-        avatarUrl: user.avatar_url,
-        bio: user.bio,
-        repositories,
-      };
+      try {
+        const user = await fetchGitHubUser(username);
+        const repositories = await fetchGitHubRepositories(username);
+        return {
+          name: user.name || null,
+          avatarUrl: user.avatar_url || null,
+          bio: user.bio || null,
+          repositories: repositories || [],
+        };
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error(`Error fetching GitHub user data: ${error.message}`);
+        } else {
+          console.error('An unknown error occurred');
+        }
+        return {
+          name: null,
+          avatarUrl: null,
+          bio: null,
+          repositories: [],
+        };
+      }
     },
     githubRepositories: async (_: any, { username }: { username: string }) => {
       return await fetchGitHubRepositories(username);
@@ -74,5 +88,24 @@ export const resolvers = {
       }
       return false;
     },
+  },
+  User: {
+    posts: (user: any) => [
+      { id: '101', title: 'First Post', content: 'Hello World', author: user },
+      {
+        id: '102',
+        title: 'Second Post',
+        content: 'GraphQL is Awesome',
+        author: user,
+      },
+    ],
+    address: (user: any) => ({
+      street: '123 Main St',
+      city: 'Metropolis',
+      country: 'USA',
+    }),
+  },
+  Post: {
+    author: (post: any) => post.author,
   },
 };

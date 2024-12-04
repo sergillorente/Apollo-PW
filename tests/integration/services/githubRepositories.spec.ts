@@ -1,9 +1,9 @@
-import { test } from '../e2e/fixtures/mock-server-fixture';
+import { test } from '../../e2e/fixtures/mock-server-fixture';
 import { expect } from '@playwright/test';
-import { fetchGitHubRepositories } from '../../src/services/github/githubServices';
+import { fetchGitHubRepositories } from '../../../src/services/github/githubServices';
 import nock from 'nock';
-import { mockGitHubApi } from '../../src/services/utils/reusables';
-import { mockGitHubRepositoriesResponse } from '../../src/services/github/mockData';
+import { mockGitHubApi } from '../../../src/services/utils/reusables';
+import { mockGitHubRepositoriesResponse } from '../../../src/services/github/mockData';
 
 test.describe('GitHub Service - fetchGitHubRepositories', () => {
   test.beforeEach(() => {

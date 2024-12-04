@@ -31,13 +31,13 @@ A modern **GraphQL API testing** and **mocking framework** using [Apollo Server]
 
 - `npm run test`
 
-**Run Jest tests**
+**Run unit tests with Jest**
 
-- `npm run test:jest`
+- `npm run test:unit`
 
-**Run Playwright tests**
+**Run integration tests with Playwright**
 
-- `npm run test:playwright`
+- `npm run test:integration`
 
 **Lint the Code**
 
