@@ -22,6 +22,7 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
+        working-directory: ./Apollo-PW
         run: npm install
 
   lint:
@@ -30,6 +31,7 @@ jobs:
 
     steps:
       - name: Run linter
+        working-directory: ./Apollo-PW
         run: npm run lint
 
   test:
@@ -42,6 +44,7 @@ jobs:
 
     steps:
       - name: Run tests
+        working-directory: ./Apollo-PW
         run: |
           if [ "${{ matrix.test-type }}" == "unit" ]; then
             npm run test:unit;
