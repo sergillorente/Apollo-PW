@@ -1,7 +1,7 @@
-import { test } from '../../e2e/fixtures/mock-server-fixture';
+import { test } from '../../e2e/fixtures/server-fixture';
 import { expect } from '@playwright/test';
-import { GET_USER_QUERY } from '../../../src/helpers/definitions';
-import { executeGraphQL } from '../../../src/helpers/helpers';
+import { GET_USER_QUERY } from '../../../src/api/helpers/definitions';
+import { executeGraphQL } from '../../../src/api/helpers/helpers';
 
 const EXPECTED_USER = {
   id: '1',

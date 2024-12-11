@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:mock-server": "ts-node src/services/mock-server.ts",
+    "start:server": "ts-node src/api/services/server.ts",
     "test": "npm run test:unit && npm run test:integration",
     "test:integration": "npx playwright test --project=integration",
     "test:unit": "jest",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "generate": "graphql-codegen"
+    "generate": "graphql-codegen",
+    "start:ui": "npx webpack --mode production"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +18,9 @@
   "description": "",
   "dependencies": {
     "apollo-server": "^3.13.0",
-    "graphql": "^16.9.0"
+    "graphql": "^16.9.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -29,6 +32,8 @@
     "@types/jest": "^29.5.14",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.10.0",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
     "@typescript-eslint/eslint-plugin": "^8.16.0",
     "@typescript-eslint/parser": "^8.16.0",
     "axios": "^1.7.9",
@@ -39,12 +44,17 @@
     "eslint-plugin-prettier": "^5.2.1",
     "graphql-scalars": "^1.24.0",
     "graphql-subscriptions": "^3.0.0",
+    "html-webpack-plugin": "^5.6.3",
     "jest": "^29.7.0",
     "nock": "^13.5.6",
     "playwright": "^1.49.0",
     "prettier": "^3.4.1",
     "ts-jest": "^29.2.5",
+    "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.2.0"
   }
 }

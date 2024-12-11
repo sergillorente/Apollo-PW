@@ -1,9 +1,9 @@
-import { test } from '../../e2e/fixtures/mock-server-fixture';
+import { test } from '../../e2e/fixtures/server-fixture';
 import { expect } from '@playwright/test';
 import nock from 'nock';
-import { GITHUB_USER_QUERY } from '../../../src/helpers/definitions';
-import { mockGitHubApi } from '../../../src/services/utils/reusables';
-import { executeGraphQL } from '../../../src/helpers/helpers';
+import { GITHUB_USER_QUERY } from '../../../src/api/helpers/definitions';
+import { mockGitHubApi } from '../../../src/api/services/utils/reusables';
+import { executeGraphQL } from '../../../src/api/helpers/helpers';
 
 test.describe('GraphQL Integration - real API', () => {
   test.beforeEach(() => {
