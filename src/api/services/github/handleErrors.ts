@@ -1,4 +1,4 @@
-import { githubApi } from '../github/githubServices';
+import { githubApi } from './githubServices';
 
 export const makeRequest = async <T>(url: string): Promise<T> => {
   try {

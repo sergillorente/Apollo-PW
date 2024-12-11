@@ -1,10 +1,10 @@
-import { resolvers } from '../../../src/core/resolvers';
+import { resolvers } from '../../../src/api/core/resolvers';
 import {
   fetchGitHubRepositories,
   fetchGitHubUser,
-} from '../../../src/services/github/githubServices';
+} from '../../../src/api/services/github/githubServices';
 
-jest.mock('../../../src/services/github/githubServices');
+jest.mock('../../../src/api/services/github/githubServices');
 
 describe('GitHub Resolvers', () => {
   beforeEach(() => {

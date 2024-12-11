@@ -1,4 +1,4 @@
-import { resolvers } from '../../../src/core/resolvers';
+import { resolvers } from '../../../src/api/core/resolvers';
 
 describe('Mutation Resolvers', () => {
   describe('createUser resolver', () => {

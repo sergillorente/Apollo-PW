@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { typeDefs } from '../../../src/core/schema';
+import { typeDefs } from '../../../src/api/core/schema';
 import {
   buildASTSchema,
   GraphQLSchema,

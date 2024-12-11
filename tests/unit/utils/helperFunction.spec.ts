@@ -1,8 +1,8 @@
 import {
   GET_USER_QUERY,
   GITHUB_USER_QUERY,
-} from '../../../src/helpers/definitions';
-import { executeGraphQL } from '../../../src/helpers/helpers';
+} from '../../../src/api/helpers/definitions';
+import { executeGraphQL } from '../../../src/api/helpers/helpers';
 import nock from 'nock';
 import axios from 'axios';
 

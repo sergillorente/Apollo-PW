@@ -25,7 +25,7 @@ A modern **GraphQL API testing** and **mocking framework** using [Apollo Server]
 
 **Start the Mock Server**
 
-- `npm run start:mock-server`
+- `npm run start:server`
 
 **Run All tests**
 

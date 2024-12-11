@@ -1,4 +1,4 @@
-import { resolvers } from '../../../src/core/resolvers';
+import { resolvers } from '../../../src/api/core/resolvers';
 
 describe('Nested Types Resolvers', () => {
   describe('User.posts resolver', () => {

@@ -1,6 +1,6 @@
 import { test as baseTest } from '@playwright/test';
-import { ApolloServer } from 'apollo-server';
-import { startMockServer } from '../../../src/services/mock-server';
+import { ApolloServer } from 'apollo-server-express';
+import { startMockServer } from '../../../src/api/services/server';
 
 type TestFixtures = {
   server: ApolloServer;
